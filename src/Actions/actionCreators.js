@@ -7,3 +7,4 @@ const mapDispatchToProps = (dispatch) => ({
     submitDrink: () => dispatch({tyle: 'SUBMIT_DRINK'})
 })
 
+export default mapDispatchToProps;
