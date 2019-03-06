@@ -10,6 +10,7 @@
     "react-redux": "^6.0.1",
     "react-router-dom": "^4.3.1",
     "react-scripts": "2.1.5",
+    "react-timer-hook": "^1.1.4",
     "redux": "^4.0.1"
   },
   "scripts": {
