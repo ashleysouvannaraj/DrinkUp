@@ -10,3 +10,18 @@
   justify-content: space-between;
   width: 70vw;
 }
+
+legend {
+  background-color: #000;
+  color: #fff;
+  padding: 3px 6px;
+}
+
+.list-items {
+  min-height: 500px;
+}
+
+b {
+  display: block;
+  font-size: 40px;
+}

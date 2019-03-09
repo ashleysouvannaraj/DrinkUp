@@ -26,6 +26,7 @@ return <div  style={{display: 'flex', flexFlow: 'column nowrap', alignItems: 'ce
                 <hr/>
                 <Switch>
                     <Route path="/Home" component={Home}/>
+                    <Route exact path="/" component={Home}/>
                     <Route path="/Ingredients" component={Ingredients}/>
                     <Route path="/About" component={About}/>
                     <Route path="/FAQ" component={FAQ}/>

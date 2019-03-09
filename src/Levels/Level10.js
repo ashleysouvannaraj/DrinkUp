@@ -1,60 +1,141 @@
 import React, {useState} from 'react';
 import { connect } from "react-redux";
 import mapDispatchToProps from "../Actions/actionCreators";
-import ListGroup from 'react-bootstrap/ListGroup';
+import Button from 'react-bootstrap/Button'
 import "../App.css";
+import {withRouter } from "react-router-dom";
 
-let Level10 = (props) => {
-  
-  let [drink1] = useState("Ramos Gin Fizz");
-  let [drink2] = useState("Mojito");
-  let [drink3] = useState("Long Island Ice Tea");
+class Level10 extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      Level10Drinks: props.Level10Drinks,
+      currentDrink: Object.keys(props.Level10Drinks)[0],
+      selectedLiquor: [],
+      selectedLiquer: [],
+      selectedMixers: [],
+      selectedGarnishes: [],
+      counter: 1,
+      counter2: 0
+    }
+    
+  }
 
-  let drinkArray = [drink1, drink2, drink3];
-  let randomDrink = drinkArray[Math.floor(drinkArray.length * Math.random())]
+  // let drinkArray = [drink1, drink2, drink3];
+  // const randomDrink = drinkArray[Math.floor(drinkArray.length * Math.random())]
+
+  componentDidMount() {
+    
+  }
+
+  // handleSelectedIngredients = (e) => {
+  //   let value = Array.from(e.target.selectedOptions, option => option.value);
+    
+  // }
+
+  // randomizeDrink = (e) => {
+  //   randomDrink = this.state.currentDrinks[Math.floor(this.state.currentDrinks.length * Math.random())]
+  // }
+
+
+checkIngredients = (e) => {
+  let liquors = this.state.selectedLiquor;
+  let liquers = this.state.selectedLiquer;
+  let mixers = this.state.selectedMixers;
+
+  let mergedIngredients = liquors.concat(liquers, mixers);
+
+      
+      let currentDrink = this.state.currentDrink;
+      let drinkObject = this.state.Level10Drinks;
+      let m = drinkObject[currentDrink].length;
+      let n = mergedIngredients.length;
+      
+      if (n != m) {
+        alert("Your missing or have too many ingredients");
+      } else if (mergedIngredients.sort().join(",") != drinkObject[currentDrink].sort().join(",")) {
+        alert("These are the wrong Ingredients....try again!!!!");
+      } else {
+        alert("Great!!!! These are the correct ingredients");
+        if (this.state.counter == 3) {
+          alert("GAME OVER!")
+        }
+        this.setState({
+          currentDrink: Object.keys(this.props.Level10Drinks)[this.state.counter2+1],
+          selectedLiquor: [],
+         selectedLiquer: [],
+         selectedMixers: [],
+         counter: this.state.counter+1,
+         counter2: this.state.counter2+1
+        })
+    
+      }
+}
+
+
+selectLiquor = (e) => {
+  let value = Array.from(e.target.selectedOptions, option => option.value);
+  this.setState({selectedLiquor: value});
+}
+
+selectLiquer = (e) => {
+  let value = Array.from(e.target.selectedOptions, option => option.value);
+  this.setState({selectedLiquer: value});
+}
+
+selectMixers = (e) => {
+  let value = Array.from(e.target.selectedOptions, option => option.value);
+  this.setState({selectedMixers: value});
+}
+
   
+  render () {
+
+
     return (
+      
       <div>
-        <h1>I would like a {randomDrink} please</h1>
+        <h1>I would like a {this.state.currentDrink} please</h1>
       
       <div className="container">
-        
-          <ListGroup>
-            <b>Liquor</b>
-            {props.ingredients.liquor.map((liquor, i) => <ListGroup.Item action key={i} value={liquor}>{liquor}</ListGroup.Item>)}
-          </ListGroup>
-          
+      <div id="Liquor">
+      <b>Liquor</b>
+          <select multiple className="list-items" onChange={(e) => this.selectLiquor(e)}>
+            {this.props.ingredients.liquor.map((liquor, i) => (<option key={i} value={liquor}>{liquor}</option>))}
+          </select>
+          </div>
 
-         
-          <ListGroup>
-            <b>Liqeur</b>
-            {props.ingredients.liquer.map((liquer, i) => <ListGroup.Item action key={i} value={liquer}>{liquer}</ListGroup.Item>)}
-          </ListGroup>
-          
+          <div id="Liquer">
+          <b>Liquer</b>
+          <select multiple className="list-items" onChange={(e) => this.selectLiquer(e)}>
+            
+            {this.props.ingredients.liquer.map((liquer, i) => (<option key={i} value={liquer}>{liquer}</option>))}
+          </select>
+          </div>
 
-         
-          <ListGroup>
-            <b>Mixers</b>
-          {props.ingredients.mixers.map((mixers, i) => <ListGroup.Item action key={i} value={mixers}>{mixers}</ListGroup.Item>)}
-          </ListGroup>
+          <div id="Mixers">
+          <b>Mixers</b>
+          <select multiple className="list-items" onChange={(e) => this.selectMixers(e)}>
+            
+          {this.props.ingredients.mixers.map((mixers, i) => (<option key={i}  value={mixers}>{mixers}</option>))}
+          </select>
+          </div>
 
-          <ListGroup>
-            <b>Garnishes</b>
-          {props.ingredients.garnishes.map((garnishes, i) => <ListGroup.Item action key={i} value={garnishes}>{garnishes}</ListGroup.Item>)}
-          </ListGroup>
-         
         </div>
+        <Button variant="warning" onClick={() => this.checkIngredients()}>Make Drink</Button>
         </div>
     )
+  }
   }
 
   const mapStateToProps = (state) => ({
     isGameStarted: state.isGameStarted,
-    ingredients: state.ingredients
+    ingredients: state.ingredients,
+    Level10Drinks: state.drinks.Level10,
   
   })
 
-  export default connect(
+  export default withRouter(connect(
     mapStateToProps,
     mapDispatchToProps
-    )(Level10);
+    )(Level10));
