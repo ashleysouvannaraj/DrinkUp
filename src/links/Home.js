@@ -11,10 +11,10 @@ import {withRouter } from "react-router-dom";
 let Home = (props) => {
     return (
         <div style={{ display: 'flex', flexFlow: 'column nowrap', alignItems: 'center', maxWidth: '960px'}}>
-            <h1>Home Page</h1>
+            <h1>Drink Up</h1>
             <br/>
             <h2>Click the button to start bartending!</h2>
-            <Button variant="primary" onClick={() => props.history.push("/Level1")}>Drink Up!</Button>
+            <Button style={{backgroundColor:"#738290", border:"none" }} className="btn-lg"  onClick={() => props.history.push("/Level1")}>Drink Up!</Button>
         </div>
     )
 }
