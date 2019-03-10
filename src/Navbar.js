@@ -18,14 +18,17 @@ import Level10 from './Levels/Level10';
 
 let Navbar = () => {
 return <div  style={{display: 'flex', flexFlow: 'column nowrap', alignItems: 'center', textAlign: 'center'}}>
-            <div>
-                <NavLink to="/Home" style={{margin: '2em'}}>Home</NavLink>
-                <NavLink to="/Ingredients" style={{margin: '2em'}}>Ingredients</NavLink>
-                <NavLink to="/About"  style={{margin: '2em'}}>About</NavLink>
-                <NavLink to="/FAQ"  style={{margin: '2em'}}>FAQ</NavLink>
+            
+                <nav class="navbar navbar-expand-lg" id="nav-bar">
+                    <NavLink to="/Home" style={{margin: '2em', textDecoration: "none", color:"#738290", }} activeStyle={{fontWeight: "bold", color: "#FFFCF7"}}>Home</NavLink>
+                    <NavLink to="/Ingredients" style={{margin: '2em', textDecoration: "none", color:"#738290"}} activeStyle={{fontWeight: "bold", color: "#FFFCF7"}}>Ingredients</NavLink>
+                    <NavLink to="/About"  style={{margin: '2em', textDecoration: "none", color:"#738290"}} activeStyle={{fontWeight: "bold", color: "#FFFCF7"}}>About</NavLink>
+                    <NavLink to="/FAQ"  style={{margin: '2em', textDecoration: "none", color:"#738290"}} activeStyle={{fontWeight: "bold", color: "#FFFCF7"}}>FAQ</NavLink>
+                </nav>
                 <hr/>
                 <Switch>
                     <Route path="/Home" component={Home}/>
+                    <Route exact path="/" component={Home}/>
                     <Route path="/Ingredients" component={Ingredients}/>
                     <Route path="/About" component={About}/>
                     <Route path="/FAQ" component={FAQ}/>
@@ -40,7 +43,7 @@ return <div  style={{display: 'flex', flexFlow: 'column nowrap', alignItems: 'ce
                     <Route path="/Level9" component= {Level9}/>
                     <Route path="/Level10" component= {Level10}/>
                 </Switch>
-            </div>
+            
     </div>
 }
 
