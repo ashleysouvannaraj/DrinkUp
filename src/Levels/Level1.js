@@ -3,6 +3,9 @@ import { connect } from "react-redux";
 import mapDispatchToProps from "../Actions/actionCreators";
 import ListGroup from 'react-bootstrap/ListGroup';
 import "../App.css";
+import Timer from "../Timer2.js";
+
+
 
 let Level1 = (props) => {
   let [drink1] = useState("Gin and Tonic");
@@ -11,8 +14,11 @@ let Level1 = (props) => {
 
   let drinkArray = [drink1, drink2, drink3];
   let randomDrink = drinkArray[Math.floor(drinkArray.length * Math.random())]
+
   
     return (
+      <div>
+        <Timer/>
       <div>
         <h1>I would like a {randomDrink} please</h1>
       
@@ -39,6 +45,8 @@ let Level1 = (props) => {
          
         </div>
         </div>
+        </div>
+        
     )
   }
 

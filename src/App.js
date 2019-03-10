@@ -8,11 +8,19 @@ import mapDispatchToProps from "./Actions/actionCreators.js";
 import Level1 from "./Levels/Level1.js";
 
 class App extends Component {
+
+  componentDidMount() {
+      window.addEventListener('click', this.handleWindowClick);
+  }
+
+  handleWindowClick() {
+    
+  }
+
   render() {
     return (
       <div>
         <Navbar/>
-        <MyTimer/>
       </div>
     );
   }
