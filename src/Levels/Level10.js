@@ -95,34 +95,37 @@ selectMixers = (e) => {
     return (
       
       <div>
-        <h1>I would like a {this.state.currentDrink} please</h1>
-      
-      <div className="container">
-      <div id="Liquor">
-      <b>Liquor</b>
-          <select multiple className="list-items" onChange={(e) => this.selectLiquor(e)}>
-            {this.props.ingredients.liquor.map((liquor, i) => (<option key={i} value={liquor}>{liquor}</option>))}
-          </select>
-          </div>
-
-          <div id="Liquer">
-          <b>Liquer</b>
-          <select multiple className="list-items" onChange={(e) => this.selectLiquer(e)}>
+          <h1>I would like a <b className="animated zoomIn">{this.state.currentDrink} please</b></h1>
+        
+        <div className="container">
+        <div id="Liquor">
+        <b>Liquor</b>
+        <img src={require('../images/liquor.jpg')}/>
+            <select multiple size="13" className="list-items" onChange={(e) => this.selectLiquor(e)}>
+              {this.props.ingredients.liquor.sort().map((liquor, i) => (<option key={i} value={liquor}>{liquor}</option>))}
+            </select>
+            </div>
             
-            {this.props.ingredients.liquer.map((liquer, i) => (<option key={i} value={liquer}>{liquer}</option>))}
-          </select>
-          </div>
+            <div id="Liquer">
+            <b>Liquer</b>
+            <img src={require('../images/liqueur.jpg')}/>
+            <select multiple className="list-items" size="11" onChange={(e) => this.selectLiquer(e)}>
+              
+              {this.props.ingredients.liquer.sort().map((liquer, i) => (<option key={i} value={liquer}>{liquer}</option>))}
+            </select>
+            </div>
 
-          <div id="Mixers">
-          <b>Mixers</b>
-          <select multiple className="list-items" onChange={(e) => this.selectMixers(e)}>
-            
-          {this.props.ingredients.mixers.map((mixers, i) => (<option key={i}  value={mixers}>{mixers}</option>))}
-          </select>
-          </div>
+            <div id="Mixers">
+            <b>Mixers</b>
+            <img src={require('../images/mixers.jpg')}/>
+            <select multiple className="list-items" size="17" onChange={(e) => this.selectMixers(e)}>
+              
+            {this.props.ingredients.mixers.sort().map((mixers, i) => (<option key={i}  value={mixers}>{mixers}</option>))}
+            </select>
+            </div>
 
         </div>
-        <Button variant="warning" onClick={() => this.checkIngredients()}>Make Drink</Button>
+        <Button variant="warning"  className="btn-lg" onClick={() => this.checkIngredients()}>Make Drink</Button>
         </div>
     )
   }

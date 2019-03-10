@@ -1,7 +1,7 @@
-.nabar {
-  background-color: black
+#nav-bar {
+  background-color: #A7BED3;
+  width: 100%;
 }
-
 
 .container {
   display: flex;
@@ -11,17 +11,25 @@
   width: 70vw;
 }
 
-legend {
-  background-color: #000;
-  color: #fff;
-  padding: 3px 6px;
-}
-
-.list-items {
+/* .list-items {
   min-height: 500px;
-}
+} */
 
 b {
   display: block;
   font-size: 40px;
+}
+
+img {
+  height: 100px;
+  width: 100px;
+  display: block;
+}
+select {
+  border: none;
+}
+
+b {
+  display: inline;
+  animation-delay: 3s;
 }
