@@ -7,6 +7,8 @@ import { withRouter } from "react-router-dom";
 import moment from "moment";
 import { initialState } from "../reducer";
 
+
+//Destructured the object and created 
 const initialLevelState = ({ drinks }) => ({
   drinks,
   currentDrink: Object.keys(drinks)[0],

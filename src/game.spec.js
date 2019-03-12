@@ -222,21 +222,21 @@ describe("game", () => {
 
     it("answers Negroni correctly", () => {
       const drink = drinks[Object.keys(drinks)[0]];
-      const ingredients = [];
+      const ingredients = [gin, campari, sweetRedVermouth];
 
       expect(drink.sort()).toEqual(ingredients.sort());
     });
 
-    it("answers TODO correctly", () => {
+    it("answers Margarita correctly", () => {
       const drink = drinks[Object.keys(drinks)[1]];
-      const ingredients = [coke, rum];
+      const ingredients = [tequila, sweetAndSourMix, saltRim, lime];
 
       expect(drink.sort()).toEqual(ingredients.sort());
     });
 
-    it("answers TODO correctly", () => {
+    it("answers Gimlet correctly", () => {
       const drink = drinks[Object.keys(drinks)[1]];
-      const ingredients = [coke, rum];
+      const ingredients = [gin, sweetenedLimeJuice];
 
       expect(drink.sort()).toEqual(ingredients.sort());
     });
@@ -245,23 +245,23 @@ describe("game", () => {
   describe("level 8", () => {
     const { drinks } = initialState.levels.Level8;
 
-    it("answers TODO correctly", () => {
+    it("answers French 75 correctly", () => {
       const drink = drinks[Object.keys(drinks)[0]];
-      const ingredients = [gin, tonic];
+      const ingredients = [gin, champagne, lemonJuice, simpleSyrup, lime];
 
       expect(drink.sort()).toEqual(ingredients.sort());
     });
 
-    it("answers TODO correctly", () => {
+    it("answers Sidecar correctly", () => {
       const drink = drinks[Object.keys(drinks)[1]];
-      const ingredients = [coke, rum];
+      const ingredients = [cognac, tripleSec, lemonJuice];
 
       expect(drink.sort()).toEqual(ingredients.sort());
     });
 
-    it("answers TODO correctly", () => {
+    it("answers Amaretto Sour correctly", () => {
       const drink = drinks[Object.keys(drinks)[1]];
-      const ingredients = [coke, rum];
+      const ingredients = [amaretto, sweetAndSourMix, lemon];
 
       expect(drink.sort()).toEqual(ingredients.sort());
     });
@@ -270,23 +270,23 @@ describe("game", () => {
   describe("level 9", () => {
     const { drinks } = initialState.levels.Level9;
 
-    it("answers TODO correctly", () => {
+    it("answers The Cab correctly", () => {
       const drink = drinks[Object.keys(drinks)[0]];
-      const ingredients = [gin, tonic];
+      const ingredients = [cognac, champagne, simpleSyrup, angosturaBitters, limeJuice];
 
       expect(drink.sort()).toEqual(ingredients.sort());
     });
 
-    it("answers TODO correctly", () => {
+    it("answers Rum Martinez correctly", () => {
       const drink = drinks[Object.keys(drinks)[1]];
-      const ingredients = [coke, rum];
+      const ingredients = [rum, sweetVermouth, maraschinoLiqueur, angosturaBitters, orangePeel];
 
       expect(drink.sort()).toEqual(ingredients.sort());
     });
 
-    it("answers TODO correctly", () => {
+    it("answers Painkiller correctly", () => {
       const drink = drinks[Object.keys(drinks)[1]];
-      const ingredients = [coke, rum];
+      const ingredients = [pussersRum, orangeJuice, pineappleJuice, creamOfCoconut, nutmeg, pineappleWedge];
 
       expect(drink.sort()).toEqual(ingredients.sort());
     });
@@ -295,23 +295,23 @@ describe("game", () => {
   describe("level 10", () => {
     const { drinks } = initialState.levels.Level10;
 
-    it("answers TODO correctly", () => {
+    it("answers Ramos Gin Fizz correctly", () => {
       const drink = drinks[Object.keys(drinks)[0]];
-      const ingredients = [gin, tonic];
+      const ingredients = [gin, lemonJuice, limeJuice, halfAndHalf, simpleSyrup, beatEggWhite];
 
       expect(drink.sort()).toEqual(ingredients.sort());
     });
 
-    it("answers TODO correctly", () => {
+    it("answers Mojito correctly", () => {
       const drink = drinks[Object.keys(drinks)[1]];
-      const ingredients = [coke, rum];
+      const ingredients = [whiteRum, soda, limeJuice, mintLeaves, lime];
 
       expect(drink.sort()).toEqual(ingredients.sort());
     });
 
-    it("answers TODO correctly", () => {
+    it("answers Long Island Iced Tea correctly", () => {
       const drink = drinks[Object.keys(drinks)[1]];
-      const ingredients = [coke, rum];
+      const ingredients = [gin, vodka, rum, tequila, tripleSec, sweetAndSourMix, coke, lemon];
 
       expect(drink.sort()).toEqual(ingredients.sort());
     });
