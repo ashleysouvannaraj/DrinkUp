@@ -114,8 +114,8 @@ export const initialState = {
       hasGarnishes: true,
       drinks: {
         "Moscow Mule": ["Vodka", "Ginger Beer", "Crushed Ice", "Lime"],
-        Manhattan: ["Whisky", "Sweet Vermouth", "Cherry"],
-        "Old Fashioned": ["Whisky", "Angorista Bitters", "Sugar", "Orange Peel"]
+        Manhattan: ["Bourbon", "Sweet Vermouth", "Cherry"],
+        "Old Fashioned": ["Whiskey", "Angorista Bitters", "Sugar", "Orange Peel"]
       }
     },
     Level7: {

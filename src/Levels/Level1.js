@@ -7,6 +7,8 @@ import { withRouter } from "react-router-dom";
 import moment from "moment";
 import { initialState } from "../reducer";
 
+
+//Destructured the object and created 
 const initialLevelState = ({ drinks }) => ({
   drinks,
   currentDrink: Object.keys(drinks)[0],
@@ -24,7 +26,7 @@ class Level1 extends React.Component {
     super(props);
     this.state = initialLevelState(props);
   }
-
+//Function running score reduced by amount of time it takes to answer drinks correctly
   points = secondsElapsed => {
     if (secondsElapsed > 60) {
       return 0;
