@@ -148,7 +148,7 @@ describe("game", () => {
 
     it("answers Sunburn correctly", () => {
       const drink = drinks[Object.keys(drinks)[0]];
-      const ingredients = [gin, sweetAndSourMix, soda];
+      const ingredients = [gin, sweetAndSourMix, tripeSec, soda];
 
       expect(drink.sort()).toEqual(ingredients.sort());
     });
@@ -204,14 +204,14 @@ describe("game", () => {
 
     it("answers Manhattan correctly", () => {
       const drink = drinks[Object.keys(drinks)[1]];
-      const ingredients = [whisky, sweetVermouth, maraschinoCherry];
+      const ingredients = [bourbon, sweetVermouth, maraschinoCherry];
 
       expect(drink.sort()).toEqual(ingredients.sort());
     });
 
     it("answers Old Fashioned correctly", () => {
       const drink = drinks[Object.keys(drinks)[1]];
-      const ingredients = [whisky, angoristaBitters, sugar, orangePeel];
+      const ingredients = [whiskey, angoristaBitters, sugar, orangePeel];
 
       expect(drink.sort()).toEqual(ingredients.sort());
     });
@@ -304,7 +304,7 @@ describe("game", () => {
 
     it("answers Mojito correctly", () => {
       const drink = drinks[Object.keys(drinks)[1]];
-      const ingredients = [whiteRum, soda, limeJuice, mintLeaves, lime];
+      const ingredients = [whiteRum, soda, limeJuice, tripeSec, mintLeaves, lime];
 
       expect(drink.sort()).toEqual(ingredients.sort());
     });
