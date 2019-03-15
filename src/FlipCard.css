@@ -32,6 +32,8 @@
     background-color:white;
     color: black;
     z-index: 2;
+    display: block;
+    margin: 0 auto;
   }
   
   .flip-card-back {
@@ -39,5 +41,16 @@
     color: black;
     transform: rotateY(180deg);
     z-index: 1;
-    padding-top: 10px;
+    padding-top: 40px;
+    position: center;
+    overflow: scroll;
+  }
+
+  img {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 30px;
+      margin-bottom: 10px;
+      width: 60%;
   }

@@ -3,8 +3,7 @@ import { NavLink, Switch, Route } from "react-router-dom";
 import "./App.css";
 import Home from "./links/Home";
 import Ingredients from "./links/Ingredients";
-import About from "./links/About";
-import FAQ from "./links/FAQ";
+import Highscores from "./links/Highscores";
 import Level from "./Levels/Level1";
 import { initialState } from "./reducer";
 
@@ -31,21 +30,14 @@ let Navbar = () => {
           style={{ margin: "2em", textDecoration: "none", color: "#738290" }}
           activeStyle={{ fontWeight: "bold", color: "#FFFCF7" }}
         >
-          Ingredients
+          Study
         </NavLink>
         <NavLink
-          to="/About"
+          to="/Highscores"
           style={{ margin: "2em", textDecoration: "none", color: "#738290" }}
           activeStyle={{ fontWeight: "bold", color: "#FFFCF7" }}
         >
-          About
-        </NavLink>
-        <NavLink
-          to="/FAQ"
-          style={{ margin: "2em", textDecoration: "none", color: "#738290" }}
-          activeStyle={{ fontWeight: "bold", color: "#FFFCF7" }}
-        >
-          FAQ
+          Highscores
         </NavLink>
       </nav>
       <hr />
@@ -53,8 +45,7 @@ let Navbar = () => {
         <Route path="/Home" component={Home} />
         <Route exact path="/" component={Home} />
         <Route path="/Ingredients" component={Ingredients} />
-        <Route path="/About" component={About} />
-        <Route path="/FAQ" component={FAQ} />
+        <Route path="/Highscores" component={Highscores} />
         {/* generate levels */}
         {Object.keys(initialState.levels).map((_, i) => {
           const ii = i + 1; // adjust for 0 start point
