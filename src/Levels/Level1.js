@@ -188,7 +188,7 @@ class Level1 extends React.Component {
         <div className="container">
           <div id="Liquor">
             <b>Liquor</b>
-            <img src={require("../images/liquor.jpg")} alt="liquor" />
+            <img src={require("../images/liquor.jpg")} alt="liquor" style={{width: "100px", height: "100px"}}/>
             <select
               multiple
               size="13"
@@ -206,7 +206,7 @@ class Level1 extends React.Component {
 
           <div id="Liquer">
             <b>Liqueur</b>
-            <img src={require("../images/liqueur.jpg")} alt="liquer" />
+            <img src={require("../images/liqueur.jpg")} style={{width: "100px", height: "100px"}} alt="liqueur" />
             <select
               multiple
               className="list-items"
@@ -224,7 +224,7 @@ class Level1 extends React.Component {
 
           <div id="Mixers">
             <b>Mixers</b>
-            <img src={require("../images/mixers.jpg")} alt="mixers" />
+            <img src={require("../images/mixers.jpg")} style={{width: "100px", height: "100px"}} alt="mixers" />
             <select
               multiple
               className="list-items"
@@ -244,7 +244,7 @@ class Level1 extends React.Component {
             <div id="Garnishes">
               <b>Garnishes</b>
               {/** fixme: need garnishes image */}
-              <img src={require("../images/mixers.jpg")} alt="garnishes" />
+              <img src={require("../images/mixers.jpg")} style={{width: "100px", height: "100px"}} alt="garnishes" />
               <select
                 multiple
                 className="list-items"
