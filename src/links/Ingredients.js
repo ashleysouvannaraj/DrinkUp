@@ -145,8 +145,8 @@ const cards = [
  const Ingredients = () => {
     return (
     <div>
-        { cards.map((card  => {
-            return <FlipCard image={card.image} name={card.name} ingredients={card.ingredients}/>
+        { cards.map(((card, i)  => {
+            return <FlipCard key={i} image={card.image} name={card.name} ingredients={card.ingredients}/>
             }))
         }
     </div>

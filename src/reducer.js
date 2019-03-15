@@ -215,6 +215,15 @@ const reducer = (state = initialState, action) => {
     case "LOGGING_IN":
       return {...state, currentUser: {username: payload.loggedInUser} };
       break;
+    case "LOG_OUT":
+      return {...state, currentUser: {username: ""} }
+      break;
+    case "START_GAME":
+      return {...state, isGameStarted: true }
+      break;
+    case "END_GAME":
+      return {...state, isGameStarted: false }
+      break;
   }
 
   return state;
