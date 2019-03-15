@@ -4,13 +4,13 @@ import './FlipCard.css';
 let FlipCard = (props) => {
 
     return (
-        <div class="flip-card">
-            <div class= "flip-card-inner">
-                <div class="flip-card-front">
+        <div className="flip-card">
+            <div className= "flip-card-inner">
+                <div className="flip-card-front">
                     <img src={require(`${props.image}`)} />
                     {props.name}
                 </div>
-                <div class="flip-card-back">
+                <div className="flip-card-back">
                     {props.ingredients}
                 </div>
             </div>
