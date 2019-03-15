@@ -4,10 +4,16 @@ import "./App.css";
 import Home from "./links/Home";
 import Ingredients from "./links/Ingredients";
 import Highscores from "./links/Highscores";
+import Login from "./links/Login";
 import Level from "./Levels/Level1";
 import { initialState } from "./reducer";
+import { connect } from "react-redux";
+import {withRouter } from "react-router-dom";
 
-let Navbar = () => {
+let Navbar = ({currentUser}) => {
+ 
+console.log(currentUser);
+
   return (
     <div
       style={{
@@ -17,7 +23,7 @@ let Navbar = () => {
         textAlign: "center"
       }}
     >
-      <nav className="navbar navbar-expand-lg" id="nav-bar">
+      <nav className="navbar" id="nav-bar">
         <NavLink
           to="/Home"
           style={{ margin: "2em", textDecoration: "none", color: "#738290" }}
@@ -39,6 +45,16 @@ let Navbar = () => {
         >
           Highscores
         </NavLink>
+        <NavLink
+          to="/Login"
+          style={{ margin: "2em", textDecoration: "none", color: "#738290" }}
+          activeStyle={{ fontWeight: "bold", color: "#FFFCF7" }}
+        >
+          Login
+        </NavLink>
+        
+        {/* <a href="/">Logout</a> */}
+     <span style={{ margin: "2em", textDecoration: "none", color: "white"}}>{currentUser.toUpperCase()}</span>
       </nav>
       <hr />
       <Switch>
@@ -46,6 +62,7 @@ let Navbar = () => {
         <Route exact path="/" component={Home} />
         <Route path="/Ingredients" component={Ingredients} />
         <Route path="/Highscores" component={Highscores} />
+        <Route path="/Login" component={Login} />
         {/* generate levels */}
         {Object.keys(initialState.levels).map((_, i) => {
           const ii = i + 1; // adjust for 0 start point
@@ -62,4 +79,11 @@ let Navbar = () => {
   );
 };
 
-export default Navbar;
+const mapStateToProps = (state) => ({
+  currentUser: state.currentUser.username
+})
+
+export default withRouter(connect(
+  mapStateToProps,
+  null
+  )(Navbar));

@@ -185,6 +185,9 @@ export const initialState = {
     }
   },
   isGameStarted: false,
+  currentUser: {
+    username: ""
+  },
   timer: "",
   score: 0,
   currentLevel: [
@@ -209,15 +212,11 @@ const reducer = (state = initialState, action) => {
       return { ...state, score: state.score + payload.score };
     default:
       break;
+    case "LOGGING_IN":
+      return {...state, currentUser: {username: payload.loggedInUser} };
+      break;
   }
-  // if (type == "SELECT_INGREDIENTS") {
-  //     let value = Array.from(payload);
-  //     let newValue = value.join('');
-  //     return {
-  //         ...state,
-  //         currentSelectedIngredients:
-  //     }
-  // }
+
   return state;
 };
 
