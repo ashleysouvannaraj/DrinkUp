@@ -3,6 +3,7 @@ import { NavLink, Switch, Route } from "react-router-dom";
 import "./App.css";
 import Home from "./links/Home";
 import Ingredients from "./links/Ingredients";
+import Highscores from "./links/Highscores";
 import Login from "./links/Login";
 import Level from "./Levels/Level1";
 import { initialState } from "./reducer";
@@ -35,7 +36,14 @@ console.log(currentUser);
           style={{ margin: "2em", textDecoration: "none", color: "#738290" }}
           activeStyle={{ fontWeight: "bold", color: "#FFFCF7" }}
         >
-          Ingredients
+          Study
+        </NavLink>
+        <NavLink
+          to="/Highscores"
+          style={{ margin: "2em", textDecoration: "none", color: "#738290" }}
+          activeStyle={{ fontWeight: "bold", color: "#FFFCF7" }}
+        >
+          Highscores
         </NavLink>
         <NavLink
           to="/Login"
@@ -53,6 +61,7 @@ console.log(currentUser);
         <Route path="/Home" component={Home} />
         <Route exact path="/" component={Home} />
         <Route path="/Ingredients" component={Ingredients} />
+        <Route path="/Highscores" component={Highscores} />
         <Route path="/Login" component={Login} />
         {/* generate levels */}
         {Object.keys(initialState.levels).map((_, i) => {

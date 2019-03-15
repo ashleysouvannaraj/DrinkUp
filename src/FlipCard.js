@@ -7,7 +7,7 @@ let FlipCard = (props) => {
         <div class="flip-card">
             <div class= "flip-card-inner">
                 <div class="flip-card-front">
-                    <img src={require(`${props.image}`)} alt='image' width="150px" height="150px"/>
+                    <img src={require(`${props.image}`)} />
                     {props.name}
                 </div>
                 <div class="flip-card-back">

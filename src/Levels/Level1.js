@@ -6,6 +6,7 @@ import "../App.css";
 import { withRouter } from "react-router-dom";
 import moment from "moment";
 import { initialState } from "../reducer";
+import axios from "axios";
 
 
 //Destructured the object and created 
@@ -42,6 +43,14 @@ class Level1 extends React.Component {
       return 100;
     }
   };
+
+  recordScore = () => {
+    axios.post('/scores/record', {
+      username: this.props.username,
+      points: this.props.score
+    })
+  }
+
 
   checkIngredients = () => {
     const {
@@ -164,6 +173,8 @@ class Level1 extends React.Component {
   render() {
     return (
       <div>
+        <h2>Your Score: {this.props.score}</h2>
+        
         <h1>
           I would like a <b>{this.state.currentDrink} please</b>
         </h1>
@@ -187,7 +198,7 @@ class Level1 extends React.Component {
           </div>
 
           <div id="Liquer">
-            <b>Liquer</b>
+            <b>Liqueur</b>
             <img src={require("../images/liqueur.jpg")} alt="liquer" />
             <select
               multiple
