@@ -189,7 +189,7 @@ export const initialState = {
     username: ""
   },
   timer: "",
-  score: 0,
+  score: 200,
   currentLevel: [
     "Level1",
     "Level2",
@@ -215,14 +215,17 @@ const reducer = (state = initialState, action) => {
     case "LOGGING_IN":
       return {...state, currentUser: {username: payload.loggedInUser} };
       break;
+    case "SUBMIT_SCORE":
+      return {...state, };
+      break;
     case "LOG_OUT":
-      return {...state, currentUser: {username: ""} }
+      return {...state, currentUser: {username: ""} };
       break;
     case "START_GAME":
-      return {...state, isGameStarted: true }
+      return {...state, isGameStarted: true };
       break;
     case "END_GAME":
-      return {...state, isGameStarted: false }
+      return {...state, isGameStarted: false };
       break;
   }
 

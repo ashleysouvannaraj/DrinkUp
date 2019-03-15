@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
-import { NavLink, Switch, Route } from 'react-router-dom';
-import {withRouter} from 'react'
 import '../App.css';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import axios from 'axios';
+import { connect } from "react-redux";
 
 
 class Highscores extends Component {
@@ -15,8 +14,13 @@ class Highscores extends Component {
         }
     }
 
+    componentDidMount() {
+        this.getScores()
+    }
+
+
     async getScores() {
-        let response = await axios.get('/highscores');
+        let response = await axios.get('/scores/highscores');
         console.log(response.data);
         this.setState({
             ...this.state,
@@ -27,10 +31,26 @@ class Highscores extends Component {
     render() {
         return (
             <div>
-                {this.props.getScores}
+                <h1>HIGHSCORES</h1> <hr />
+                {this.state.highscores.map((record, i) => {
+                    return (
+                        <div key={i}>
+                            <Row>
+                                <Col style={{fontSize: '25px', textAlign: 'left'}}>{record.username}</Col> 
+                                <Col style={{fontSize: '25px', textAlign: 'right'}}>{record.points}</Col>
+                            </Row>
+                        </div>
+                    )
+                })}
             </div>
         )
     }
 }
 
-export default Highscores;
+let mapStateToProps = (state) => {
+    return {
+    username: state.username
+    }
+}
+
+export default connect( mapStateToProps, null)(Highscores);

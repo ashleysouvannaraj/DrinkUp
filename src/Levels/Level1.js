@@ -45,9 +45,12 @@ class Level1 extends React.Component {
   };
 
   recordScore = () => {
+
     axios.post('/scores/record', {
-      username: this.props.username,
+      user: this.props.currentUser.username,
       points: this.props.score
+    }).then((res) => {
+      console.log(res.data);
     })
   }
 
@@ -99,6 +102,7 @@ class Level1 extends React.Component {
             alert(
               `you are the winner winner chicken dinner: ${this.props.score}`
             );
+            this.recordScore();
             let endGame = this.props.endGame;
             endGame();
             this.props.history.push("/Home");
@@ -270,7 +274,7 @@ class Level1 extends React.Component {
 }
 
 const mapStateToProps = (
-  { isGameStarted, ingredients, levels, score },
+  { isGameStarted, ingredients, levels, score, currentUser },
   { level }
 ) => {
   const { drinks, hasGarnishes = false } = levels["Level" + level];
@@ -279,7 +283,8 @@ const mapStateToProps = (
     ingredients,
     drinks,
     hasGarnishes,
-    score
+    score,
+    currentUser
   };
 };
 
