@@ -12,9 +12,6 @@
   width: 70vw;
 }
 
-/* .list-items {
-  min-height: 500px;
-} */
 
 b {
   display: block;
@@ -22,8 +19,6 @@ b {
 }
 
 img {
-  height: 100px;
-  width: 100px;
   display: block;
 }
 
@@ -33,5 +28,4 @@ select {
 
 b {
   display: inline;
-  animation-delay: 3s;
 }
