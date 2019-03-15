@@ -8,7 +8,8 @@ const mapDispatchToProps = dispatch => ({
   submitDrink: () => dispatch({ type: "SUBMIT_DRINK" }),
   updateScore: (score, callback) =>
     dispatch({ type: UPDATE_SCORE_TYPE, payload: { score } }, callback),
-    login: (loggedInUser) => dispatch({type: "LOGGING_IN", payload: {loggedInUser}})
+    login: (loggedInUser) => dispatch({type: "LOGGING_IN", payload: {loggedInUser}}),
+    submitScore: (points) => dispatch({type: "SUBMIT_SCORE", payload: {points}} )
 });
 
 export default mapDispatchToProps;

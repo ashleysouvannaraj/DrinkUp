@@ -189,7 +189,7 @@ export const initialState = {
     username: ""
   },
   timer: "",
-  score: 0,
+  score: 200,
   currentLevel: [
     "Level1",
     "Level2",
@@ -215,6 +215,8 @@ const reducer = (state = initialState, action) => {
     case "LOGGING_IN":
       return {...state, currentUser: {username: payload.loggedInUser} };
       break;
+      case "SUBMIT_SCORE":
+        return {...state, }
   }
 
   return state;
