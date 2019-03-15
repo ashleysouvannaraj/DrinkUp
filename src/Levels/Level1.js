@@ -103,6 +103,9 @@ class Level1 extends React.Component {
               `you are the winner winner chicken dinner: ${this.props.score}`
             );
             this.recordScore();
+            let endGame = this.props.endGame;
+            endGame();
+            this.props.history.push("/Home");
           } else {
             this.props.history.push("/Level" + nextLevel);
           }
