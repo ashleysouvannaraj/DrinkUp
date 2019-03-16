@@ -189,7 +189,7 @@ export const initialState = {
     username: ""
   },
   timer: "",
-  score: 200,
+  score: 0,
   currentLevel: [
     "Level1",
     "Level2",

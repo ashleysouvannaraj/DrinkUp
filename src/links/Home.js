@@ -17,10 +17,12 @@ let Home = ({history, startGame}) => {
     return (
         <div style={{ display: 'flex', flexFlow: 'column nowrap', alignItems: 'center', maxWidth: '960px'}}>
             <h1>Welcome to Drink Up</h1>
-            <p>Drink Up is a bartending game that will test your skills on how making drinks. Your score is based off of how
-                long it takes to make the drink. Select the available ingredients and make the drink as fast as you can for the highest score. Click the login button to 
-                sign in to play!
-                OH! and don't forget to click the study page to study before you start!
+            <p> Drink Up is a bartending game that will test your skills on how to make drinks. <br />
+                Your score is based off of how long it takes to make the drink. <br />
+                Select the available ingredients and make the drink as fast as you can for the highest score. <br /> 
+                Hold down the <strong>command</strong> key to select multiple ingrdients in each categry, if necessary.<br /><br />
+                Click the login button to sign in to play! <br />
+                <strong>OH! and don't forget to click the study page to study before you start!</strong>
             </p>
 
             <Button style={{backgroundColor:"#738290", border:"none" }} className="btn-lg"  onClick={(e) => handleGameStart(e)}>Drink Up!</Button>

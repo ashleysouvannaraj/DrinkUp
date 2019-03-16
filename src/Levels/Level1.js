@@ -19,7 +19,7 @@ const initialLevelState = ({ drinks }) => ({
   selectedGarnishes: [],
   completedDrinks: 0,
   numberOfDrinks: Object.keys(drinks).length,
-  startTime: undefined
+  startTime: undefined,
 });
 
 class Level1 extends React.Component {
