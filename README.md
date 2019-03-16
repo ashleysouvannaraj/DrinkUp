@@ -1,4 +1,29 @@
+# Drink-Up Game
+
+Learn how to be your own bartender. Mix ingredients as fast as you can to receive the highest score.
+
+![Home Page](https://github.com/nbenoit3/drink-up/blob/master/src/images/readMe-image-1.png)
+
+
+
+
+
+# How to Play
+
+* Select the login button to register and login with a username and password.
+* If you want to study up before you play, go to the study page. There you will find drink cards with their ingredients on the back. 
+* Click the the drink up button to start
+* Select the ingredients for the current drink. You have unlimited tries to do so.
+* The faster you select and mix the correct drinks, the higher your score will be. 
+* Your score will be displayed on the screen. 
+* Follow instructions below on how to install the game locally.
+* Happy bartending and don't forget to **DRINK UP**!
+
+![Level Page](https://github.com/nbenoit3/drink-up/blob/master/src/images/readMe-image-2.png)
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
 
 ## Available Scripts
 
